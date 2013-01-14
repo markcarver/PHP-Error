@@ -1,21 +1,18 @@
-PHP Error | Improve Error Reporting for PHP
-===========================================
+PHP Error
+=========
 
 PHP errors are not good enough for development, it's as simple as that. This aims to solve this.
+This is the Drupal fork of the original library at https://github.com/JosephLenton/PHP-Error.
 
-![Better Error Message](http://i.imgur.com/1G77I.png)
+Getting Started
+---------------
 
-When an error strikes, the page is replaced with a full stack trace, syntax highlighting, and all displayed to be readable.
-
-### Works with Ajax too!
-
-If the server errors during an ajax request, then the request is paused, and the error is displayed in the browser. You can then click to automatically retry the last request.
-
-![ajax server stack trace](http://i.imgur.com/WRgug.png)
-
-This requires no changes to your JavaScript, and works with existing JS libraries such as jQuery.
-
-Check out the [project homepage](http://phperror.net) for a live demo.
+ * [Download the php\_error module](http://drupal.org/project/php_error)
+ * Place it in the folder `/sites/all/modules` of your Drupal site.
+ * [Download the php\_error library](https://raw.github.com/markcarver/PHP-Error/master/src/php_error.php), it's just one file.
+ * Create the folder `php_error` in `/sites/all/libraries` and place the `php_error.php` library file in it (the full path should look like `/sites/all/libraries/php_error/php_error.php`).
+ * Enable the PHP Error module at `/admin/modules`
+ * Configure the PHP Error module at `/admin/config/development/php_error`
 
 Features
 --------
@@ -28,21 +25,20 @@ Features
  * fixes some error messages which are just plain wrong
  * syntax highlighting
  * looks pretty!
+ 
+ ![Better Error Message](http://i.imgur.com/1G77I.png)
 
-Getting Started
----------------
+ When an error strikes, the page is replaced with a full stack trace, syntax highlighting, and all displayed to be readable.
 
- * [Download](http://phperror.net/download/php_error.php), it's just one file.
- * Place it in your project.
- * import php_error.php
- * call \php_error\reportErrors()
+ ### Works with Ajax too!
 
-```php
-    <?php
-        require( 'php_error.php' );
-        \php_error\reportErrors();
-    ?>
-```
+ If the server errors during an ajax request, then the request is paused, and the error is displayed in the browser. You can then click to automatically retry the last request.
+
+ ![ajax server stack trace](http://i.imgur.com/WRgug.png)
+
+ This requires no changes to your JavaScript, and works with existing JS libraries such as jQuery.
+
+ Check out the [project homepage](http://phperror.net) for a live demo.
 
 Documentation
 -------------
